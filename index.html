@@ -15,8 +15,29 @@
     </head>
     <body>
         <h1> My Cool Website </h1>
-        <p>I think HTML is neat!</p>
-        <img src=https://brandingforthepeople.com/wp-content/uploads/2019/04/Stock-Photography-vs-Real-Imagery.jpg>
-        <blockquote>Had I been present at the Creation, I would have given some useful hints for the better ordering of the universe.</blockquote>
+        <p>I think HTML is (sorta) neat!</p>
+        <img src=animation.gif>
+        <blockquote>"Had I been present at the Creation, I would have given some useful hints for the better ordering of the universe. - Alfonso X of Castile"</blockquote>
+        <button onclick="swappy()">quote change</button>
+        <script>
+            var index = 0;
+            
+            function swappy() {
+                var quotes = [
+                    `"lorum ipsum dolorum si" -jack`,
+                    `"Yes, the universe had a beginning. Yes, the universe continues to evolve. And yes, every one of our body's atoms is traceable to the big bang and to the thermonuclear furnace within high-mass stars. We are not simply in the universe, we are part of it. We are born from it. One might even say we have been empowered by the universe to figure itself out — and we have only just begun." - neil degrasse tyson`,
+                    `"death!" - avery russell`,
+                    `"Had I been present at the Creation, I would have given some useful hints for the better ordering of the universe." - Alfonso X of Castile`
+                ];
+            
+                var blockquote = document.querySelector("blockquote");
+                blockquote.innerHTML = quotes[index];
+                index++;
+                if (index >= 4) {
+                    index = 0;
+                }
+                
+            }
+        </script>
     </body>
 </html>
